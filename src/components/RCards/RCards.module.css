@@ -1,0 +1,64 @@
+.cardsMasterContainer {
+  display: flex;
+   flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;;
+    background-color: #3d423c;
+    padding-top: 180px;
+    margin-top: 80px;
+  }
+
+    
+  .cardContainerUnit {
+    display: flex;
+    border-radius: 10px;
+    color: #e2cb92;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px; /* Aumenta o padding para dar mais espaço interno */
+    margin: 10px;
+    width: 600px;
+    background-color: #3d423c;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave para hover */
+  }
+  
+  .cardContainerUnit:hover {
+    background-color: #3d423c;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada no hover */
+  }
+    
+  .hpTitle {
+    display: flex;
+    font-size: 30px;
+    font-weight: bold;
+    color: 3d423c;
+    text-align: center; /* Centraliza o texto */
+    margin: 0;
+    margin-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .hpCardBody{
+    display: flex;
+    color: #b3a176;
+    flex-direction: column;
+    font-size: 16px; /* Diminui o tamanho da fonte para o conteúdo */
+  line-height: 0; /* Espaçamento entre linhas adequado */
+     }
+
+  
+  .customlink {
+    color: #333; /* Cor padrão do link */
+    text-decoration: none;
+
+    display: flex;
+  }
+  
+  .customlink:hover {
+    color: #f8f8f8 !important; /* Muda a cor do link no hover */
+    text-decoration: underline;
+  }
+  

@@ -1,0 +1,93 @@
+.navContainer {
+    background-color: #3d423c; /* Cor escura para destaque */
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between; /* Distribui os itens entre as extremidades */
+    align-items: center;
+    color: white; /* Texto branco para contraste */
+    position: fixed; /* Fixa a navbar no topo */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Garante que fique acima de outros conteúdos */
+    height: 60px;
+  }
+  
+  nav img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px; /* Espaço entre o ícone e o título */
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para o ícone */
+  }
+  
+  .sitetitle {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: bold;
+  }
+  
+  /* Estilo para o botão "Add new car" à direita */
+  nav .nav-right {
+    margin-right: 10px;
+  }
+  
+  /* Estilo para o conteúdo principal */
+  main {
+    width: 100%;
+    padding: 80px 20px; /* Ajuste para dar espaço à navbar fixa */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .svgimage {
+    display: flex;
+    flex-direction: row;
+    color: black;
+    align-items: center;
+    border-radius: 50px;
+    background-color: transparent;
+    padding: 0 10px;
+  }
+  
+  .icon {
+    background-color: white;
+    padding: 5px;
+    border-radius: 50%;
+  }
+  
+  .sitetitle {
+    color: white;
+  }
+  
+  /* Estilo para links gerais */
+  .headlineContainer {
+    color: white; /* Cor padrão do link */
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.3s ease;
+    width: 100%;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+  
+  .newAndRandomContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .customlink {
+    text-decoration: none;
+    color: inherit;
+    cursor: default; /* Não parece um link inicialmente */
+  }
+  
+  .customlink:hover {
+    text-decoration: underline;
+    color: blue; /* Cor típica de um link */
+    cursor: pointer; /* Aparece como um link ao passar o mouse */
+  }

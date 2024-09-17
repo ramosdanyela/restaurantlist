@@ -1,0 +1,60 @@
+.searchForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.searchContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  background-color: #3d423c;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra leve */
+  margin-top: 0px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  position: fixed;
+}
+
+/* Estilo do campo de busca */
+.searchinput {
+  width: 65%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: white;
+  color: #3d423c;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Estilo do select */
+.cuisineselect {
+  width: 30%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.sortOptions {
+  margin-top: 10px;
+}
+
+.sortOptions span {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.activeSort {
+  color: blue;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.inactiveSort {
+  color: white;
+  font-weight: normal;
+}
