@@ -3,11 +3,10 @@ import { useState } from "react";
 import RCards from "../../components/RCards/RCards";
 import RSearchForm from "../../components/RSearchForm/RSearchForm";
 
-function RHomePage({ loading, setLoading }) {
+function RHomePage({ loading, setLoading, restaurants, setRestaurants}) {
   const [search, setSearch] = useState("");
   const [cuisine, setCuisine] = useState(null);
   const [sortBy, setSortBy] = useState("");
-  const [restaurants, setRestaurants] = useState([]);
 
   return (
     <div className={s.homePageContainer}>
@@ -20,6 +19,8 @@ function RHomePage({ loading, setLoading }) {
         setSortBy={setSortBy}
         setRestaurants={setRestaurants}
         restaurants={restaurants}
+        loading={loading}
+        setLoading={setLoading}
       />
       <RCards
         search={search}

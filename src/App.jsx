@@ -1,18 +1,16 @@
 import { useState } from "react";
 import Navbar from "./components/RNavbar/RNavbar";
 import RHomePage from "./pages/RHomePage/RHomePage";
-import {Route, Routes, Link} from "react-router-dom";
-
 import RDetailPage from "./pages/RDetailPage/RDetailPage";
 import RAddRestaurant from "./pages/RAddRestaurant/RAddRestaurant";
+import {Route, Routes} from "react-router-dom";
+
 
 import "./App.css";
 
 function App() {
   const [restaurants, setRestaurants] = useState([]);
   const [loading, setLoading] = useState(true);
-
-
 
   return (
     <div className="mainScreen">
@@ -25,7 +23,7 @@ function App() {
           }
         />
         <Route path="/restaurant/:id" element={<RDetailPage loading={loading} setLoading={setLoading}/>} /> 
-        <Route path="/addnew" element={<RAddRestaurant loading={loading} setLoading={setLoading} setRestaurants={setRestaurants}/>} /> 
+        <Route path="/addnew" element={<RAddRestaurant setRestaurants={setRestaurants}/>} /> 
       </Routes>
     </div>
   );

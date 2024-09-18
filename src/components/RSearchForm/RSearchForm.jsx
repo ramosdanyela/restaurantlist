@@ -11,9 +11,9 @@ function RSearchForm({
   sortBy,
   setRestaurants,
   restaurants = [],
+  loading,
+  setLoading,
 }) {
-  const [loading, setLoading] = useState(true);
-
   useEffect(() => {
     setLoading(true);
     async function fetchData() {
@@ -40,7 +40,7 @@ function RSearchForm({
   };
 
   const handleSortChange = (sortType) => {
-    setSortBy(sortType); // Atualiza o tipo de ordenação
+    setSortBy(sortType); 
   };
 
   const uniqueCuisines = Array.from(

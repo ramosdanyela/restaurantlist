@@ -77,10 +77,7 @@ function RAddRestaurant({ setRestaurants }) {
         newRestaurant
       );
 
-      const updatedRestaurants = await axios.get(
-        "https://basic-server-express-production.up.railway.app/restaurants/all"
-      );
-      setRestaurants(updatedRestaurants.data);
+      setRestaurants(response.data);
 
       setForm({
         name: "",
@@ -100,8 +97,7 @@ function RAddRestaurant({ setRestaurants }) {
         ],
       });
 
-      console.log(response.data);
-    } catch (error) {
+         } catch (error) {
       console.error("Error creating restaurant", error);
     }
   }

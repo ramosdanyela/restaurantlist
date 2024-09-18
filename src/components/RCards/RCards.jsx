@@ -3,8 +3,15 @@ import { useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-function RCards({ search, cuisine, sortBy, loading, setLoading, restaurants, setRestaurants}) {
-
+function RCards({
+  search,
+  cuisine,
+  sortBy,
+  loading,
+  setLoading,
+  restaurants,
+  setRestaurants,
+}) {
   useEffect(() => {
     setLoading(true);
     async function fetchData() {
@@ -17,11 +24,13 @@ function RCards({ search, cuisine, sortBy, loading, setLoading, restaurants, set
             (acc, grade) => acc + grade.score,
             0
           );
-          const averageScore = restaurant.grades.length > 0 ? totalScores / restaurant.grades.length: 0;
+          const averageScore =
+            restaurant.grades.length > 0
+              ? totalScores / restaurant.grades.length
+              : 0;
           return { ...restaurant, averageScore };
         });
-console.log("Fetched Restaurants:", response.data);
-        setRestaurants(restaurantsWithAverage);
+      setRestaurants(restaurantsWithAverage);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching data", error);
@@ -67,18 +76,19 @@ console.log("Fetched Restaurants:", response.data);
                 <div className={s.cardContainerUnit}>
                   <p className={s.hpTitle}>{restaurant.name}</p>
                   <div className={s.hpCardBody}>
-                  <p className={s.Avg}>
-                    Average score: {Number.isFinite(restaurant.averageScore) 
-                        ? restaurant.averageScore.toFixed(1) 
+                    <p className={s.Avg}>
+                      Average score:{" "}
+                      {Number.isFinite(restaurant.averageScore)
+                        ? restaurant.averageScore.toFixed(1)
                         : "N/A"}
-                  </p>
-                  <p className={s.hpCuisine}>Cuisine: {restaurant.cuisine}</p>
-                  <p className={s.hpBorough}>Borough: {restaurant.borough}</p>
-                </div>
+                    </p>
+                    <p className={s.hpCuisine}>Cuisine: {restaurant.cuisine}</p>
+                    <p className={s.hpBorough}>Borough: {restaurant.borough}</p>
+                  </div>
                 </div>
               </Link>
             ))}
-            </div>
+        </div>
       )}
     </>
   );
