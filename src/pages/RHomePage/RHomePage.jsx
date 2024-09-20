@@ -9,7 +9,7 @@ function RHomePage({ loading, setLoading, restaurants, setRestaurants }) {
    const [sortBy, setSortBy] = useState("");
 
    return (
-      <div className="">
+      <div className="flex-auto flex-col flex items-center w-full mt-0">
          <RSearchForm
             search={search}
             setSearch={setSearch}

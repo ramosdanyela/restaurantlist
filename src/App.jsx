@@ -12,7 +12,7 @@ function App() {
    const [loading, setLoading] = useState(true);
 
    return (
-      <div className="">
+      <div className="bg-[#3d423c] m-0 p-0">
          <Navbar />
          <Routes>
             <Route

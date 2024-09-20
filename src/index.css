@@ -3,3 +3,7 @@
   font-weight: 400;
   background-color: #3d423c;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
