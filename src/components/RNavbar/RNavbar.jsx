@@ -16,10 +16,12 @@ function RNavbar() {
           <img className=" bg-[#FFFFFF] p-[5px] rounded-ls" src={icon} />
           <h1 className="text-[#FFFFFF]">Restaurant list</h1>{" "}
         </div>{" "}
-        <div className="no-underline text-[#FFFFFF] font-bold">
+        <div className="no-underline flex-col flex text-[#FFFFFF] font-bold">
           <Link to="/addnew" className="">
             Add new restaurant
           </Link>
+          <Link to="/charts">
+          Analytics</Link>
         </div>
       </div>
     </nav>

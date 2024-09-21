@@ -3,6 +3,7 @@ import Navbar from "./components/RNavbar/RNavbar";
 import RHomePage from "./pages/RHomePage/RHomePage";
 import RDetailPage from "./pages/RDetailPage/RDetailPage";
 import RAddRestaurant from "./pages/RAddRestaurant/RAddRestaurant";
+import RCharts from "./pages/RCharts/RCharts"
 import { Route, Routes } from "react-router-dom";
 
 import "./App.css";
@@ -36,6 +37,7 @@ function App() {
                path="/addnew"
                element={<RAddRestaurant setRestaurants={setRestaurants} />}
             />
+            < Route path="/charts" element={<RCharts/>} />
          </Routes>
       </div>
    );
