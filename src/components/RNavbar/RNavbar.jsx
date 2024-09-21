@@ -4,20 +4,20 @@ import { Link } from "react-router-dom";
 
 function RNavbar() {
   return (
-    <nav className={s.navContainer}>
-      <div className={s.headlineContainer}>
-        <div className="homeButton">
-          <Link to="/" className={s.customlink}>
+    <nav className="bg-[#3d423c] flex-auto w-full flex-row items-center text-[#FFFFFF] fixed top-0 left-0 z-[1000] h-[60px]">
+      <div className="flex w-full items-center justify-between text-[#FFFFFF]  flex-row no-underline font-bold pr-[30px] pl-[30px]">
+        <div>
+          <Link to="/" className="no-underline cursor-default">
             Home
           </Link>
         </div>
-        <div className={s.svgimage}>
+        <div className="flex text-[#000000] items-center  p-[ 0 10px]">
           {" "}
-          <img className={s.icon} src={icon} />
-          <h1 className={s.sitetitle}>Restaurant list</h1>{" "}
+          <img className=" bg-[#FFFFFF] p-[5px] rounded-ls" src={icon} />
+          <h1 className="text-[#FFFFFF]">Restaurant list</h1>{" "}
         </div>{" "}
-        <div className={s.newAndRandomContainer}>
-          <Link to="/addnew" className={s.customlink}>
+        <div className="no-underline text-[#FFFFFF] font-bold">
+          <Link to="/addnew" className="">
             Add new restaurant
           </Link>
         </div>

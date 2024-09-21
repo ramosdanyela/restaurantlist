@@ -91,19 +91,21 @@ function RDetailPage({ loading, setLoading }) {
   }
 
   return (
-    <div className={s.dpMasterContainer}>
-      <div className={s.dpContainer}>
+    <div className="flex flex-col items-center">
+      <div className="flex-col inline-block items-center p-[10px] bg-[#3d423c] text-[#dedfc5] mt-[180px] mb-[20px] gap-[20px] shadow-[0_4px_8px_rgba(0,0,0,0.1)]">
         {loading && <p>Loading...</p>}
         {!loading && (
           <>
-            <div className={s.dpTitleIdContainer}>
-              <div className={s.dpTitle}>{restaurant.name}</div>
-              <div className={s.dpId_}>
+            <div className="text-center mb-[20px]">
+              <div className="text-[3rem] font-bold text-[#dedfc5]">
+                {restaurant.name}
+              </div>
+              <div className="">
                 <i> restaurant_id: {restaurant.restaurant_id}</i>
               </div>
             </div>
-            <div className={s.genInfo}>
-              <div className={s.subTitle}> General Info</div>
+            <div className="text-[1rem] text-[#dedfc5] flex mb-[10px] flex-col">
+              <div className=""> General Info</div>
               <div>
                 {" "}
                 <b>Avg Score:</b> {restaurant.averageScore}{" "}
@@ -122,8 +124,8 @@ function RDetailPage({ loading, setLoading }) {
               </div>
             </div>
 
-            <div className={s.Address}>
-              <div className={s.subTitle}>Address</div>
+            <div className="flex flex-col mb-[20px] mt-[20px]">
+              <div className="font-bold text-[2rem] mb-[5px]">Address</div>
               <div>Street: {restaurant.address?.street || "N/A"}</div>
               <div>Building: {restaurant.address?.building || "N/A"}</div>
               <div>Zip Code: {restaurant.address?.zipcode || "N/A"}</div>
@@ -135,11 +137,11 @@ function RDetailPage({ loading, setLoading }) {
               </div>
             </div>
 
-            <div className={s.gradesContainer}>
-              <div className={s.subTitle}>Grades</div>
+            <div className="">
+              <div className="font-bold text-[2rem] mb-[5px]">Grades</div>
               {restaurant.grades?.length > 0 ? (
                 restaurant.grades.map((grade) => (
-                  <div className={s.gradeContainerUnit} key={grade._id}>
+                  <div className="flex flex-col mb-[10px]" key={grade._id}>
                     <div>
                       {" "}
                       Date: {new Date(grade.date).toLocaleDateString()}
@@ -156,22 +158,25 @@ function RDetailPage({ loading, setLoading }) {
               )}
             </div>
 
-            <div className={s.editButtonContainer}>
-              <button className={s.editButton} onClick={toggleEditButton}>
+            <div className="mt-[30px] flex justify-center">
+              <button
+                className="p-[10px] bg-[#dedfc5] rounded-md text-[#3d423c] text-[1.2rem] font-bold cursor-pointer transition-colors duration-300 ease"
+                onClick={toggleEditButton}
+              >
                 Edit Restaurant
               </button>
             </div>
 
             {isEditVisible && (
-              <div className={s.editFieldContainer}>
-                <form className={s.editForm}>
+              <div className="">
+                <form className="flex flex-col gap-[15px mt-[10px] p-[20px] bg-[#dedfc5] rounded-md w-full max-w-md">
                   <label>
                     <b>General Info</b>
                   </label>
-                  <div className={s.editNameContainer}>
+                  <div className="">
                     <label>Name</label>
                     <input
-                      className={s.inputName}
+                      className="flex bg-[#FFFFFF] justify-end text-[#000000] w-full p-[5px] rounded-md text-[1rem] text-right border border-[#ccc]"
                       type="text"
                       placeholder="Restaurant name"
                       name="name"
@@ -180,10 +185,10 @@ function RDetailPage({ loading, setLoading }) {
                     />
                   </div>
 
-                  <div className={s.editInfoContainer}>
+                  <div className="">
                     <label>Cuisine</label>
                     <input
-                      className={s.inputCuisine}
+                      className="flex bg-[#FFFFFF] justify-end text-[#000000] w-full p-[5px] rounded-md text-[1rem] text-right border border-[#ccc]"
                       type="text"
                       name="cuisine"
                       value={form.cuisine}
@@ -192,7 +197,7 @@ function RDetailPage({ loading, setLoading }) {
 
                     <label> Borough</label>
                     <input
-                      className={s.inputBorough}
+                      className="flex bg-[#FFFFFF] justify-end text-[#000000] w-full p-[5px] rounded-md text-[1rem] text-right border border-[#ccc]"
                       type="text"
                       name="borough"
                       value={form.borough}
@@ -203,10 +208,10 @@ function RDetailPage({ loading, setLoading }) {
                     <b>Address</b>
                   </label>
 
-                  <div className={s.editAdress}>
+                  <div className="">
                     <label>Street</label>
                     <input
-                      className={s.inputStreet}
+                      className="flex bg-[#FFFFFF] justify-end text-[#000000] w-full p-[5px] rounded-md text-[1rem] text-right border border-[#ccc]"
                       type="text"
                       name="street"
                       value={form.street}
@@ -214,7 +219,7 @@ function RDetailPage({ loading, setLoading }) {
                     />
                     <label> Building</label>
                     <input
-                      className={s.inputBuilding}
+                      className="flex bg-[#FFFFFF] justify-end text-[#000000] w-full p-[5px] rounded-md text-[1rem] text-right border border-[#ccc]"
                       type="text"
                       name="building"
                       value={form.building}
@@ -224,7 +229,7 @@ function RDetailPage({ loading, setLoading }) {
 
                   <label>Zip Code</label>
                   <input
-                    className={s.inputZipcode}
+                    className="flex bg-[#FFFFFF] justify-end text-[#000000] w-full p-[5px] rounded-md text-[1rem] text-right border border-[#ccc]"
                     type="text"
                     name="zipcode"
                     value={form.zipcode}
@@ -233,7 +238,7 @@ function RDetailPage({ loading, setLoading }) {
 
                   <label> Coord (Latitude, Longitude) </label>
                   <input
-                    className={s.inputCoord}
+                    className="flex bg-[#FFFFFF] justify-end text-[#000000] w-full p-[5px] rounded-md text-[1rem] text-right border border-[#ccc]"
                     type="text"
                     name="coord"
                     value={form.coord.join(", ")}
@@ -245,14 +250,17 @@ function RDetailPage({ loading, setLoading }) {
                     }
                   />
 
-                  <div className={s.saveDeleteContainer}>
+                  <div className="flex justify-between mt-[10px]">
                     <button
-                      className={s.deleteButton}
+                      className="bg-[#f44336] text-[#FFFFFF] px-5 py-2.5 no-border rounded-md text-[1rem] cursor-pointer w-[48%] transition-colors duration-300 ease"
                       onClick={handleDeleteClick}
                     >
                       Delete Restaurant
                     </button>
-                    <button className={s.saveButton} onClick={handleSaveClick}>
+                    <button
+                      className="bg-[#4caf50] text-[#FFFFFF] px-5 py-2.5 no-border rounded-md text-[1rem] cursor-pointer w-[48%] transition-colors duration-300 ease"
+                      onClick={handleSaveClick}
+                    >
                       Save changes
                     </button>
                   </div>

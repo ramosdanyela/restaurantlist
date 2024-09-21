@@ -96,47 +96,52 @@ function RAddRestaurant({ setRestaurants }) {
           },
         ],
       });
-
-         } catch (error) {
+    } catch (error) {
       console.error("Error creating restaurant", error);
     }
   }
 
   return (
-    <div className={s.editFieldContainer}>
-      <form className={s.editForm}>
-        <div className={s.title}>
+    <div className="flex flex-col items-center justify-start p-[20px] mt-[180px] bg-[#3d423c] gap-[20px] min-h-[100vh]">
+      <form className="flex flex-col items-start gap-[15px] p-[20px] bg-[#dedfc5] rounded-md max-w-[400px] w-full">
+        <div className="text-[#OOOOOO] text-left text-[25px]">
           <b>Add new restaurant</b>
         </div>
 
-        <label>
+        <label className="flex flex-col items-start gap-[2px] p-[2px] bg-[#dedfc5] rounded-md max-w[400px] w-full">
           <b>General Info</b>
         </label>
-        <div className={s.editNameContainer}>
-          <label>Name</label>
+
+        <div className="flex flex-row items-center w-full">
+          <label className="flex flex-col items-start gap-[2px] p-[2px] bg-[#dedfc5] rounded-md max-w[400px] w-full">
+            Name
+          </label>
           <input
-            className={s.inputName}
-            type="text"
-            placeholder="Restaurant name"
+            className="flex justify-end w-full p-[5px] text-[#3d423c] rounded-md bg-[#FFFFFF] text-[1rem] text-right"
             name="name"
             value={form.name}
             onChange={handleAddChange}
           />
         </div>
 
-        <div className={s.editInfoContainer}>
-          <label>Cuisine</label>
+        <div className="flex flex-row items-center w-full">
+          <label className="flex flex-col items-start gap-[2px] p-[2px] bg-[#dedfc5] rounded-md max-w[400px] w-full">
+            Cuisine
+          </label>
           <input
-            className={s.inputCuisine}
+            className="flex justify-end w-full p-[5px] text-[#3d423c] rounded-md bg-[#FFFFFF] text-[1rem] text-right"
             type="text"
             name="cuisine"
             value={form.cuisine}
             onChange={handleAddChange}
           />
-
-          <label>Borough</label>
+        </div>
+        <div className="flex flex-row items-center w-full">
+          <label className="flex flex-col items-start gap-[2px] p-[0px] bg-[#dedfc5] rounded-md max-w[400px] w-full">
+            Borough
+          </label>
           <input
-            className={s.inputBorough}
+            className="flex justify-end w-full p-[5px] text-[#3d423c] rounded-md bg-[#FFFFFF] text-[1rem] text-right"
             type="text"
             name="borough"
             value={form.borough}
@@ -144,21 +149,28 @@ function RAddRestaurant({ setRestaurants }) {
           />
         </div>
 
-        <label>
+        <label className="flex flex-col items-start gap-[2px] p-[2px] bg-[#dedfc5] rounded-md max-w[400px] w-full">
           <b>Address</b>
         </label>
-        <div className={s.editAdress}>
-          <label>Street</label>
+
+        <div className="flex flex-row items-center w-full">
+          <label className="flex flex-col items-start gap-[2px] p-[0px] bg-[#dedfc5] rounded-md max-w[400px] w-full">
+            Street
+          </label>
           <input
-            className={s.inputStreet}
+            className="flex justify-end w-full p-[5px] text-[#3d423c] rounded-md bg-[#FFFFFF] text-[1rem] text-right"
             type="text"
             name="street"
             value={form.street}
             onChange={handleAddChange}
           />
-          <label>Building</label>
+        </div>
+        <div className="flex flex-row items-center w-full">
+          <label className="flex flex-col items-start gap-[2px] p-[0px] bg-[#dedfc5] rounded-md max-w[400px] w-full">
+            Building
+          </label>
           <input
-            className={s.inputBuilding}
+            className="flex justify-end w-full p-[5px] text-[#3d423c] rounded-md bg-[#FFFFFF] text-[1rem] text-right"
             type="text"
             name="building"
             value={form.building}
@@ -166,73 +178,100 @@ function RAddRestaurant({ setRestaurants }) {
           />
         </div>
 
-        <label>Zip Code</label>
-        <input
-          className={s.inputZipcode}
-          type="text"
-          name="zipcode"
-          value={form.zipcode}
-          onChange={handleAddChange}
-        />
-
-        <label>Coord (Latitude, Longitude)</label>
-        <input
-          className={s.inputCoord}
-          type="text"
-          name="coord"
-          value={form.coord}
-          onChange={handleAddChange}
-        />
-
-        <label>Restaurant ID</label>
-        <input
-          className={s.inputRestaurantId}
-          type="text"
-          name="restaurant_id"
-          value={form.restaurant_id}
-          onChange={handleAddChange}
-        />
-
-        <label>
-          <b>Grades</b>
-        </label>
+        <div className="flex flex-row items-center w-full">
+          <label className="flex flex-col items-start gap-[2px] p-[0px] bg-[#dedfc5] rounded-md max-w[400px] w-full">
+            Zip Code
+          </label>
+          <input
+            className="flex justify-end w-full p-[5px] text-[#3d423c] rounded-md bg-[#FFFFFF] text-[1rem] text-right"
+            type="text"
+            name="zipcode"
+            value={form.zipcode}
+            onChange={handleAddChange}
+          />
+        </div>
+        <div className="flex flex-row items-center w-full">
+          <label className="flex flex-col items-start gap-[2px] p-[0px] bg-[#dedfc5] rounded-md max-w[400px] w-full">
+            Coord (Latitude, Longitude)
+          </label>
+          <input
+            className="flex justify-end w-full p-[5px] text-[#3d423c] rounded-md bg-[#FFFFFF] text-[1rem] text-right"
+            type="text"
+            name="coord"
+            value={form.coord}
+            onChange={handleAddChange}
+          />
+        </div>
+        <div className="flex flex-row items-center w-full">
+          <label className="flex flex-col items-start gap-[2px] p-[0px] bg-[#dedfc5] rounded-md max-w[400px] w-full">
+            Restaurant ID
+          </label>
+          <input
+            className="flex justify-end w-full p-[5px] text-[#3d423c] rounded-md bg-[#FFFFFF] text-[1rem] text-right"
+            type="text"
+            name="restaurant_id"
+            value={form.restaurant_id}
+            onChange={handleAddChange}
+          />
+        </div>
+        <div className="flex flex-row w-full">
+          <label className="flex items-start gap-[10px] p-[15px] bg-[#dedfc5] rounded-md max-w[400px] w-full">
+            <b>Grades</b>
+          </label>
+          <button
+            type="button"
+            className=" w-full bg-[blue] flex-row rounded-md px-5 py-2.5 text-[#FFFFFF]"
+            onClick={addGrade}
+          >
+            + Add Grade
+          </button>{" "}
+        </div>
         {form.grades.map((grade, index) => (
-          <div key={index} className={s.gradeContainer}>
-            <label>Date</label>
-            <input
-              className={s.inputGradeDate}
-              type="date"
-              name="date"
-              value={grade.date}
-              onChange={(event) => handleGradeChange(index, event)}
-            />
-
-            <label>Grade</label>
-            <input
-              className={s.inputGrade}
-              type="text"
-              name="grade"
-              value={grade.grade}
-              onChange={(event) => handleGradeChange(index, event)}
-            />
-
-            <label>Score</label>
-            <input
-              className={s.inputScore}
-              type="number"
-              name="score"
-              value={grade.score}
-              onChange={(event) => handleGradeChange(index, event)}
-            />
+          <div key={index} className="w-full flex flex-col gap-[5px]">
+            <div className="flex flex-row items-center w-full">
+              <label className="flex flex-col items-start gap-[2px] p-[0px] bg-[#dedfc5] rounded-md max-w[400px] w-full">
+                Date
+              </label>
+              <input
+                className="flex w-full justify-end w-full p-[5px] text-[#3d423c] rounded-md bg-[#FFFFFF] text-[1rem] text-right"
+                type="date"
+                name="date"
+                value={grade.date}
+                onChange={(event) => handleGradeChange(index, event)}
+              />
+            </div>
+            <div className="flex flex-row items-center">
+              <label className="flex flex-col items-start gap-[2px] p-[0px] bg-[#dedfc5] rounded-md max-w[400px] w-full">
+                Grade
+              </label>
+              <input
+                className="flex justify-end w-full p-[5px] text-[#3d423c] rounded-md bg-[#FFFFFF] text-[1rem] text-right"
+                type="text"
+                name="grade"
+                value={grade.grade}
+                onChange={(event) => handleGradeChange(index, event)}
+              />
+            </div>
+            <div className="flex flex-row items-center">
+              <label className="flex flex-col items-start gap-[2px] p-[0px] bg-[#dedfc5] rounded-md max-w[400px] w-full">
+                Score
+              </label>
+              <input
+                className="flex justify-end w-full p-[5px] text-[#3d423c] rounded-md bg-[#FFFFFF] text-[1rem] text-right"
+                type="number"
+                name="score"
+                value={grade.score}
+                onChange={(event) => handleGradeChange(index, event)}
+              />
+            </div>
           </div>
         ))}
 
-        <button type="button" className={s.addGradeButton} onClick={addGrade}>
-          + Add Grade
-        </button>
-
-        <div className={s.saveDeleteContainer}>
-          <button className={s.saveButton} onClick={handleAddClick}>
+        <div className="flex w-full flex-col justify-center">
+          <button
+            className="bg-[#4caf50] no-border rounded-md text-[#FFFFFF] px-5 py-2.5 text-[1.2rem] font-bold cursor-pointer w-full"
+            onClick={handleAddClick}
+          >
             Save Restaurant
           </button>
         </div>

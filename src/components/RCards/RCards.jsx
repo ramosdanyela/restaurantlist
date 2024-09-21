@@ -30,7 +30,7 @@ function RCards({
               : 0;
           return { ...restaurant, averageScore };
         });
-      setRestaurants(restaurantsWithAverage);
+        setRestaurants(restaurantsWithAverage);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching data", error);
@@ -59,7 +59,7 @@ function RCards({
       {loading && <p>Loading..</p>}
       {!loading && restaurants.length === 0 && <p>No restaurants found</p>}
       {!loading && restaurants.length > 0 && (
-        <div className={s.cardsMasterContainer}>
+        <div className="flex-auto flex-col items-start bg-[#3d423c] pt-[180px] mt-[80px]">
           {sortedRestaurants()
             .filter((restaurant) =>
               restaurant.name.toLowerCase().includes(search.toLowerCase())
@@ -70,20 +70,22 @@ function RCards({
             .map((restaurant) => (
               <Link
                 to={`/restaurant/${restaurant._id}`}
-                className={s.customlink}
+                className="text-[#333] no-underline hover:[#f8f8f8]"
                 key={restaurant._id}
               >
-                <div className={s.cardContainerUnit}>
-                  <p className={s.hpTitle}>{restaurant.name}</p>
-                  <div className={s.hpCardBody}>
-                    <p className={s.Avg}>
+                <div className="flex-auto rounded-xl text-[#e2cb92] flex-col items-start justify-start p-[20px] m-[10px] w-[600px] bg-[#3d423c] shadow-[#50d71e] transition ease-in-out delay-150 over:-translate-y-1 hover:scale-110 duration-300">
+                  <p className="flex-auto text-[30px] font-bold text-[#e2cb92] items-start m-0 p-0 mt-[10px] pb-[10px]">
+                    {restaurant.name}
+                  </p>
+                  <div className="flex-auto text-[#b3a176] flex-col text-[16px] leading-none">
+                    <p>
                       Average score:{" "}
                       {Number.isFinite(restaurant.averageScore)
                         ? restaurant.averageScore.toFixed(1)
                         : "N/A"}
                     </p>
-                    <p className={s.hpCuisine}>Cuisine: {restaurant.cuisine}</p>
-                    <p className={s.hpBorough}>Borough: {restaurant.borough}</p>
+                    <p>Cuisine: {restaurant.cuisine}</p>
+                    <p>Borough: {restaurant.borough}</p>
                   </div>
                 </div>
               </Link>

@@ -40,7 +40,7 @@ function RSearchForm({
   };
 
   const handleSortChange = (sortType) => {
-    setSortBy(sortType); 
+    setSortBy(sortType);
   };
 
   const uniqueCuisines = Array.from(
@@ -55,19 +55,19 @@ function RSearchForm({
     <>
       {loading && <p>Loading..</p>}
       {!loading && (
-        <div className={s.searchContainer}>
-          <form className={s.searchform}>
+        <div className="flex flex-col justify-evenly items-center w-full bg-[#3d423c] mt-0 pt-[60px] pb-[10px] fixed">
+          <form className="flex flex-row justify-between gap-[20px]">
             <input
               type="text"
               placeholder="Search..."
               value={search}
               onChange={handleSearchChange}
-              className={s.searchinput}
+              className="flex-auto flex-col w-[65%] p-[10px] border-solid bg-[#FFFFFF] text-[#3d423c] rounded-md text-[1rem]"
             />
             <select
               value={cuisine}
               onChange={handleCuisineChange}
-              className={s.cuisineselect}
+              className="w-[30%] p-[10px] border-solid bg-[#FFFFFF] text-[#000000] rounded-md text-[1rem]"
             >
               <option key="x" value="x">
                 Select Cuisine
@@ -79,15 +79,15 @@ function RSearchForm({
               ))}
             </select>
           </form>
-          <div className={s.sortOptions}>
+          <div className="mt-[10px] text-[#FFFFFF]">
             <span
-              className={sortBy === "score" ? s.activeSort : s.inactiveSort}
+              className="mr-[20px] cursor-pointer"
               onClick={() => handleSortChange("score")}
             >
               Sort by Score
             </span>
             <span
-              className={sortBy === "borough" ? s.activeSort : s.inactiveSort}
+              className="mr-[20px] cursor-pointer"
               onClick={() => handleSortChange("borough")}
             >
               Sort by Borough
